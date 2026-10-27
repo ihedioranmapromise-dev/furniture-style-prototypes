@@ -1,12 +1,15 @@
 import Link from 'next/link'
+import { img } from '@/lib/images'
 
 export default function ShopHome() {
   return (
     <>
-      <section className="bg-stone-900 text-white py-20 px-6">
-        <div className="max-w-4xl mx-auto text-center">
+      <section className="relative py-24 px-6 overflow-hidden">
+        <img src={img.living2} alt="" className="absolute inset-0 w-full h-full object-cover" />
+        <div className="absolute inset-0 bg-stone-900/70" />
+        <div className="max-w-4xl mx-auto text-center relative z-10 text-white">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">Quality Furniture<br />Ready to Order</h1>
-          <p className="text-stone-300 text-lg mb-8">Sofas, beds, dining sets, office furniture and more. Delivered across Nigeria.</p>
+          <p className="text-stone-200 text-lg mb-8">Sofas, beds, dining sets, office furniture and more. Delivered across Nigeria.</p>
           <Link href="/styles/shop/products" className="inline-block bg-white text-stone-900 px-8 py-3 rounded-lg font-semibold hover:bg-stone-100">
             Browse Products
           </Link>
@@ -16,9 +19,17 @@ export default function ShopHome() {
       <section className="max-w-6xl mx-auto px-6 py-14">
         <h2 className="text-2xl font-bold mb-8">Popular Categories</h2>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          {['Sofas', 'Beds', 'Dining', 'Office'].map((cat) => (
-            <Link key={cat} href="/styles/shop/products" className="bg-stone-100 rounded-xl p-8 text-center font-medium hover:bg-stone-200 transition">
-              {cat}
+          {[
+            { name: 'Sofas', image: img.sofa },
+            { name: 'Beds', image: img.bed },
+            { name: 'Dining', image: img.dining },
+            { name: 'Office', image: img.desk },
+          ].map((cat) => (
+            <Link key={cat.name} href="/styles/shop/products" className="relative rounded-xl overflow-hidden aspect-square group">
+              <img src={cat.image} alt={cat.name} className="w-full h-full object-cover group-hover:scale-105 transition" />
+              <div className="absolute inset-0 bg-black/40 flex items-end p-4">
+                <span className="text-white font-medium">{cat.name}</span>
+              </div>
             </Link>
           ))}
         </div>

@@ -1,0 +1,21 @@
+// Curated Unsplash furniture images (free to use)
+export const img = {
+  sofa: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800&q=80',
+  sofa2: 'https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?w=800&q=80',
+  sofaGrey: 'https://images.unsplash.com/photo-1554995207-c18c203602cb?w=800&q=80',
+  bed: 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=800&q=80',
+  bed2: 'https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=800&q=80',
+  dining: 'https://images.unsplash.com/photo-1617806118233-18e1de247200?w=800&q=80',
+  dining2: 'https://images.unsplash.com/photo-1617098900591-3f918886c1f9?w=800&q=80',
+  desk: 'https://images.unsplash.com/photo-1518455027359-f3f8164ba9c5?w=800&q=80',
+  wardrobe: 'https://images.unsplash.com/photo-1595428774223-ef526981218a?w=800&q=80',
+  console: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&q=80',
+  chair: 'https://images.unsplash.com/photo-1503602642458-232111445657?w=800&q=80',
+  living: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=1200&q=80',
+  living2: 'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=1200&q=80',
+  woodwork: 'https://images.unsplash.com/photo-1504148455328-c376907d081c?w=800&q=80',
+  workshop: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&q=80',
+  luxury: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=1200&q=80',
+  luxury2: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80',
+  office: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80',
+}

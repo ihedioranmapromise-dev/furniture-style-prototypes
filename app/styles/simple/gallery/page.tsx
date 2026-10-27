@@ -1,4 +1,7 @@
 import Link from 'next/link'
+import { img } from '@/lib/images'
+
+const gallery = [img.sofa, img.bed, img.dining, img.desk, img.wardrobe, img.console, img.chair, img.living2]
 
 export default function SimpleGallery() {
   return (
@@ -6,9 +9,9 @@ export default function SimpleGallery() {
       <Link href="/styles/simple" className="text-sm text-stone-500">← Back</Link>
       <h1 className="text-2xl font-bold mt-2 mb-6">Gallery</h1>
       <div className="grid grid-cols-2 gap-3">
-        {Array.from({ length: 8 }).map((_, i) => (
-          <div key={i} className="aspect-square bg-stone-100 rounded-lg flex items-center justify-center text-3xl">
-            {['🛋️','🛏️','🪑','🗄️','🪞','🚪','📺','🪑'][i]}
+        {gallery.map((src, i) => (
+          <div key={i} className="aspect-square rounded-lg overflow-hidden">
+            <img src={src} alt="Furniture piece" className="w-full h-full object-cover" />
           </div>
         ))}
       </div>

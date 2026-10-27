@@ -1,11 +1,13 @@
 import Link from 'next/link'
+import { img } from '@/lib/images'
 
 export default function MakerHome() {
   return (
     <>
-      {/* Hero */}
-      <section className="bg-gradient-to-br from-amber-800 to-amber-950 text-white py-20 px-6">
-        <div className="max-w-4xl mx-auto text-center">
+      <section className="relative py-24 px-6 overflow-hidden">
+        <img src={img.woodwork} alt="" className="absolute inset-0 w-full h-full object-cover" />
+        <div className="absolute inset-0 bg-amber-950/75" />
+        <div className="max-w-4xl mx-auto text-center relative z-10 text-white">
           <p className="text-amber-300 text-sm font-medium mb-3 tracking-widest uppercase">Handmade in Aba</p>
           <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
             We build furniture<br />the proper way
@@ -24,7 +26,6 @@ export default function MakerHome() {
         </div>
       </section>
 
-      {/* Features */}
       <section className="max-w-6xl mx-auto px-6 py-16 grid md:grid-cols-3 gap-10">
         <div className="text-center">
           <div className="w-14 h-14 bg-amber-100 rounded-2xl flex items-center justify-center mx-auto mb-4 text-2xl">🪵</div>
@@ -43,7 +44,14 @@ export default function MakerHome() {
         </div>
       </section>
 
-      {/* CTA */}
+      <section className="max-w-6xl mx-auto px-6 pb-12 grid sm:grid-cols-3 gap-4">
+        {[img.sofa, img.dining, img.bed].map((src, i) => (
+          <div key={i} className="aspect-[4/3] rounded-xl overflow-hidden">
+            <img src={src} alt="Workshop piece" className="w-full h-full object-cover" />
+          </div>
+        ))}
+      </section>
+
       <section className="bg-stone-100 py-14 px-6 text-center">
         <h2 className="text-2xl font-bold mb-4">Ready to order?</h2>
         <p className="text-stone-600 mb-6">Send us a message on WhatsApp. We reply fast.</p>

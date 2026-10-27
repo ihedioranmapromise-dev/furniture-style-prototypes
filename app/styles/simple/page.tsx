@@ -1,4 +1,7 @@
 import Link from 'next/link'
+import { img } from '@/lib/images'
+
+const thumbs = [img.sofa, img.bed, img.chair, img.console]
 
 export default function SimpleHome() {
   return (
@@ -7,9 +10,9 @@ export default function SimpleHome() {
       <p className="text-stone-600 mb-8">Custom pieces for home and office. Solid work, fair price.</p>
 
       <div className="grid grid-cols-2 gap-3 mb-10">
-        {[1,2,3,4].map((i) => (
-          <div key={i} className="aspect-square bg-stone-100 rounded-xl flex items-center justify-center text-3xl">
-            {i === 1 ? '🛋️' : i === 2 ? '🛏️' : i === 3 ? '🪑' : '🗄️'}
+        {thumbs.map((src, i) => (
+          <div key={i} className="aspect-square rounded-xl overflow-hidden">
+            <img src={src} alt="Furniture" className="w-full h-full object-cover" />
           </div>
         ))}
       </div>

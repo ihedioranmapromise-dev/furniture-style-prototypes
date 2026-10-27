@@ -1,12 +1,13 @@
 import Link from 'next/link'
+import { img } from '@/lib/images'
 
 const items = [
-  { name: '3-Seater Sofa', price: '₦165,000', cat: 'Sofa' },
-  { name: 'King Bed + Side Tables', price: '₦198,000', cat: 'Bedroom' },
-  { name: '6-Seater Dining Set', price: '₦245,000', cat: 'Dining' },
-  { name: 'Office Desk + Chair', price: '₦89,000', cat: 'Office' },
-  { name: 'TV Console', price: '₦72,000', cat: 'Living' },
-  { name: '4-Door Wardrobe', price: '₦175,000', cat: 'Storage' },
+  { name: '3-Seater Sofa', price: '₦165,000', cat: 'Sofa', image: img.sofa2 },
+  { name: 'King Bed + Side Tables', price: '₦198,000', cat: 'Bedroom', image: img.bed2 },
+  { name: '6-Seater Dining Set', price: '₦245,000', cat: 'Dining', image: img.dining2 },
+  { name: 'Office Desk + Chair', price: '₦89,000', cat: 'Office', image: img.desk },
+  { name: 'TV Console', price: '₦72,000', cat: 'Living', image: img.console },
+  { name: '4-Door Wardrobe', price: '₦175,000', cat: 'Storage', image: img.wardrobe },
 ]
 
 export default function ShopProducts() {
@@ -17,7 +18,9 @@ export default function ShopProducts() {
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {items.map((item) => (
           <div key={item.name} className="border border-stone-200 rounded-xl overflow-hidden hover:shadow-md transition">
-            <div className="h-48 bg-stone-100 flex items-center justify-center text-4xl">🛋️</div>
+            <div className="h-48 overflow-hidden">
+              <img src={item.image} alt={item.name} className="w-full h-full object-cover" />
+            </div>
             <div className="p-5">
               <p className="text-xs text-stone-500 mb-1">{item.cat}</p>
               <h3 className="font-semibold">{item.name}</h3>
