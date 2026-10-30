@@ -8,49 +8,49 @@ export default function LuxuryHome() {
       <div className="max-w-6xl mx-auto px-6 pt-8">
         <StyleGuide
           accent="dark"
-          why="For higher-end furniture and interior clients. The site must feel calm, expensive, and trustworthy — not like a busy market catalog."
-          how={[
-            'Visitor enters a dark, quiet gallery feel',
-            'They browse collections without hard sell',
-            'They book a showroom visit or message privately',
-            'You handle the relationship with care',
+          forWho="Higher-end furniture and interior clients who buy on trust and taste."
+          notFor="High-volume low-price stock sellers."
+          job="Premium presence that leads to a visit or private WhatsApp order."
+          flow={[
+            'Enter calm gallery feel',
+            'Browse collections without noise',
+            'Book a visit or message privately',
+            'You handle the relationship',
           ]}
-          features={['Premium gallery', 'Collections', 'Book a visit', 'Minimal copy', 'High-trust look']}
+          scope="Gallery site + collections + contact/visit CTA. Not a discount catalog."
         />
       </div>
 
-      <section className="min-h-[70vh] flex items-center justify-center px-6 relative overflow-hidden">
-        <img src={img.luxury} alt="" className="absolute inset-0 w-full h-full object-cover opacity-40" />
-        <div className="absolute inset-0 bg-black/50" />
-        <div className="text-center max-w-3xl relative z-10">
-          <p className="text-neutral-300 text-sm tracking-[0.3em] uppercase mb-6">Premium Furniture</p>
-          <h1 className="text-5xl md:text-6xl font-light leading-tight mb-8">Spaces designed<br />with intention</h1>
-          <p className="text-neutral-300 text-lg mb-10">Bespoke furniture and interior pieces for discerning homes and offices.</p>
-          <Link href="/styles/luxury/collections" className="inline-block border border-white px-10 py-3 text-sm tracking-widest uppercase hover:bg-white hover:text-black transition">
-            View Collections
+      <section className="min-h-[65vh] flex items-center justify-center px-6 relative overflow-hidden">
+        <img src={img.luxury} alt="" className="absolute inset-0 w-full h-full object-cover opacity-35" />
+        <div className="absolute inset-0 bg-black/55" />
+        <div className="text-center max-w-2xl relative z-10">
+          <p className="text-neutral-400 text-xs tracking-[0.25em] uppercase mb-5">Premium furniture</p>
+          <h1 className="text-4xl md:text-5xl font-light leading-tight mb-6">Spaces designed<br />with intention</h1>
+          <Link href="/styles/luxury/collections" className="inline-block border border-white/80 px-8 py-2.5 text-xs tracking-widest uppercase hover:bg-white hover:text-black transition">
+            Collections
           </Link>
         </div>
       </section>
 
-      <section className="max-w-6xl mx-auto px-6 py-20 grid md:grid-cols-3 gap-8">
+      <section className="max-w-6xl mx-auto px-6 py-16 grid md:grid-cols-3 gap-6">
         {[
           { room: 'Living', image: img.living },
           { room: 'Bedroom', image: img.bed },
           { room: 'Office', image: img.office },
         ].map((item) => (
           <Link key={item.room} href="/styles/luxury/collections" className="group">
-            <div className="aspect-[4/5] overflow-hidden mb-4 bg-neutral-800">
+            <div className="aspect-[4/5] overflow-hidden mb-3 bg-neutral-900">
               <img src={item.image} alt={item.room} className="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
             </div>
-            <h3 className="text-lg font-light tracking-wide">{item.room} Collection</h3>
+            <h3 className="text-sm font-light tracking-wide text-neutral-300">{item.room}</h3>
           </Link>
         ))}
       </section>
 
-      <section className="border-t border-neutral-800 py-16 text-center">
-        <p className="text-neutral-400 mb-6">Experience the pieces in person</p>
-        <Link href="/styles/luxury/contact" className="inline-block bg-white text-black px-10 py-3 text-sm tracking-widest uppercase hover:bg-neutral-200">
-          Book a Showroom Visit
+      <section className="border-t border-neutral-800 py-12 text-center">
+        <Link href="/styles/luxury/contact" className="inline-block bg-white text-black px-8 py-2.5 text-xs tracking-widest uppercase hover:bg-neutral-200">
+          Book a visit
         </Link>
       </section>
     </>

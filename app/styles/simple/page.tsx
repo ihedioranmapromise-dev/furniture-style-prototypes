@@ -9,33 +9,35 @@ export default function SimpleHome() {
     <div className="max-w-lg mx-auto px-4 py-8">
       <StyleGuide
         accent="emerald"
-        why="For small makers who only need a clean online presence: show your work and let people WhatsApp you. No catalog complexity."
-        how={[
-          'Customer opens a fast, simple page on their phone',
-          'They scroll photos of your real work',
-          'They tap WhatsApp and message you',
-          'You close the job in chat — no heavy website to manage',
+        forWho="Small makers who need a clean online presence and nothing heavy."
+        notFor="Anyone who needs a full catalog, prices grid, or admin system."
+        job="Show real work. One tap to WhatsApp."
+        flow={[
+          'Open fast page on phone',
+          'Scroll photos',
+          'Tap WhatsApp',
+          'Deal closes in chat',
         ]}
-        features={['Photo gallery', 'One-page feel', 'Big WhatsApp button', 'Fast on mobile', 'Easy to update']}
+        scope="Photos + short intro + WhatsApp. No catalog complexity."
       />
 
-      <div className="text-center mt-2">
-        <h1 className="text-3xl font-bold mb-3">Furniture made in Aba</h1>
-        <p className="text-stone-600 mb-8">Custom pieces for home and office. Solid work, fair price.</p>
+      <div className="text-center mt-4">
+        <h1 className="text-2xl font-bold mb-2 text-stone-900">Furniture made in Aba</h1>
+        <p className="text-stone-600 text-sm mb-6">Custom pieces. Fair price. Message to order.</p>
 
-        <div className="grid grid-cols-2 gap-3 mb-10">
+        <div className="grid grid-cols-2 gap-2 mb-8">
           {thumbs.map((src, i) => (
-            <div key={i} className="aspect-square rounded-xl overflow-hidden">
-              <img src={src} alt="Furniture" className="w-full h-full object-cover" />
+            <div key={i} className="aspect-square rounded-lg overflow-hidden">
+              <img src={src} alt="" className="w-full h-full object-cover" />
             </div>
           ))}
         </div>
 
-        <Link href="/styles/simple/gallery" className="block w-full border border-stone-300 py-3 rounded-xl font-medium mb-3 hover:bg-stone-50">
-          See more photos
+        <Link href="/styles/simple/gallery" className="block w-full border border-stone-300 py-2.5 rounded-lg text-sm font-medium mb-2 hover:bg-stone-50">
+          More photos
         </Link>
-        <Link href="/styles/simple/contact" className="block w-full bg-emerald-600 text-white py-3 rounded-xl font-medium hover:bg-emerald-700">
-          Chat on WhatsApp
+        <Link href="/styles/simple/contact" className="block w-full bg-emerald-700 text-white py-2.5 rounded-lg text-sm font-medium hover:bg-emerald-800">
+          WhatsApp
         </Link>
       </div>
     </div>
