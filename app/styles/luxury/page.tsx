@@ -1,16 +1,31 @@
 import Link from 'next/link'
 import { img } from '@/lib/images'
+import { StyleGuide } from '@/components/StyleGuide'
 
 export default function LuxuryHome() {
   return (
     <>
+      <div className="max-w-6xl mx-auto px-6 pt-8">
+        <StyleGuide
+          accent="dark"
+          why="For higher-end furniture and interior clients. The site must feel calm, expensive, and trustworthy — not like a busy market catalog."
+          how={[
+            'Visitor enters a dark, quiet gallery feel',
+            'They browse collections without hard sell',
+            'They book a showroom visit or message privately',
+            'You handle the relationship with care',
+          ]}
+          features={['Premium gallery', 'Collections', 'Book a visit', 'Minimal copy', 'High-trust look']}
+        />
+      </div>
+
       <section className="min-h-[70vh] flex items-center justify-center px-6 relative overflow-hidden">
         <img src={img.luxury} alt="" className="absolute inset-0 w-full h-full object-cover opacity-40" />
         <div className="absolute inset-0 bg-black/50" />
         <div className="text-center max-w-3xl relative z-10">
           <p className="text-neutral-300 text-sm tracking-[0.3em] uppercase mb-6">Premium Furniture</p>
           <h1 className="text-5xl md:text-6xl font-light leading-tight mb-8">Spaces designed<br />with intention</h1>
-          <p className="text-neutral-300 text-lg mb-10">Bespoke furniture and interior pieces crafted for discerning homes and offices.</p>
+          <p className="text-neutral-300 text-lg mb-10">Bespoke furniture and interior pieces for discerning homes and offices.</p>
           <Link href="/styles/luxury/collections" className="inline-block border border-white px-10 py-3 text-sm tracking-widest uppercase hover:bg-white hover:text-black transition">
             View Collections
           </Link>
